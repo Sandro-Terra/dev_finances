@@ -1,6 +1,9 @@
 /* Global */
 :root {
     --dark-blue: #363f5f;
+    --green-button: #49aa26;
+    --light-green: #3dd705;
+    --red: #e92929;
 }
 * {
     margin: 0;
@@ -33,6 +36,7 @@ html {
     width: min(90vw, 800px);
     margin: auto;
 }
+
 /* Titles */
 h2 {
     margin-top: 3.2rem;
@@ -44,14 +48,28 @@ h2 {
 /* Links & Buttons */
 
 a {
-    color:#49aa26;
+    color: var(--green-button);
     text-decoration: none;
-    
 }
 
 a:hover {
     text-decoration: underline;
-    color: #3dd705;
+    color: var(--light-green);
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    border: none;
+    color: white;
+    background: var(--green-button);
+    border-radius: 0.25rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--light-green);
 }
 
 .button.new {
@@ -59,6 +77,21 @@ a:hover {
     margin-bottom: .8rem;
 }
 
+.button.cancel {
+    color: var(--red);
+    border: 2px var(--red) solid;
+    border-radius: 0.25rem;
+    width: auto;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.button.cancel:hover {
+    opacity: 1;
+}
 
 /* Header */
 header {
@@ -105,7 +138,7 @@ header {
     margin-top: 1rem;
 }
 .card.green {
-    background: #49aa26;
+    background: var(--green-button);
     color: white;
 }
 
@@ -185,9 +218,45 @@ td.expense {
     background: #f0f2f5;
     padding: 2.4rem;
     position: relative;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 0.25rem;
 }
 
+/* Modal */
+#form {
+    max-width: 500px;   
+}
 
+#form h2 {
+    margin-top: 0;
+}
+
+input {
+    border: none;
+    border-radius: 0.2rem;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.7rem;
+}
+
+.input-group small {
+    opacity: 0.4;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions .button,
+.input-group.actions button {
+    width: 48%;
+}
 /* Footer */
 footer {
     text-align: center;
@@ -206,4 +275,4 @@ footer {
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
     }
-{}
+}
